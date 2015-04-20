@@ -1,0 +1,56 @@
+Mason,
+
+I think I was able to fix some of the problems with your code. 
+Unfortunately because I had to copy and paste the code I couldnt see the image so I dont 
+know what it might look like with it visible. The first thing I fixed was font size. 
+Also I fixed your line breaks by adding \n where needed. The last thing I did was use
+textAlign to center the labels that you made. Possibly consider using fontColor to
+provide more contrast in your app, add info to the second window, and possibly 
+a back button to switch between pages. Below is the code I did and I hope this helps.
+
+-Skylar Densley
+
+var landing=Titanium.UI.createWindow({
+	backgroundImage:'helmet2.jpg'
+});
+
+var heading=Titanium.UI.createLabel({
+	text:'Mason Woods \n Player Card',
+	font:{fontSize:30,fontFamily:'Helvetica Neue'},
+	top:'5%',
+	textAlign: 'center'
+}); 
+
+var heading2=Titanium.UI.createLabel({
+	text:'Idaho Vandals OT',
+	font:{fontSize:20,fontFamily:'Helvetica Neue'},
+	top:'20%',
+	textAlign: 'center'
+	}); 
+
+var contact=Titanium.UI.createLabel({
+	text:'Email: \n wood8139@vandals.uidaho.edu',
+	font:{fontSize:14,fontFamily:'Helvetica Neue'},
+	top:'60%',
+	textAlign: 'center'
+	}); 
+	
+var contact2=Titanium.UI.createLabel({
+	text:'Phone: \n 208-888-1234',
+	font:{fontSize:14,fontFamily:'Helvetica Neue'},
+	top:'75%',
+	textAlign: 'center'
+	
+	}); 	
+landing.addEventListener('click', function(e){
+	var win2=Titanium.UI.createWindow({
+		url:'Win2.js',
+		backgroundColor:'white'
+	});
+	win2.open();
+});
+landing.add(contact2);	
+landing.add(contact);	
+landing.add(heading2);
+landing.add(heading);
+landing.open();
